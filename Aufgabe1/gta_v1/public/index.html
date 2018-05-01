@@ -37,19 +37,19 @@
                 <div id="tag-form">
                     <div class="form-part-wrapper">
                         <label class="form-part" for="tag-latitude">Latitude:</label>
-                        <input class="form-part" id="tag-latitude" placeholder="latitude">
+                        <input class="form-part" id="tag-latitude" type="number" min="-90" max="90" step="0.000001" placeholder="latitude" required>
                     </div>
                     <div class="form-part-wrapper">
                         <label class="form-part" for="tag-longitude">Longitude:</label>
-                        <input class="form-part" id="tag-longitude" placeholder="longitude">
+                        <input class="form-part" id="tag-longitude" type="number" min="-180" max="180" step="0.000001" placeholder="longitude" required>
                     </div>
                     <div class="form-part-wrapper">
                         <label class="form-part" for="tag-name">Name:</label>
-                        <input class="form-part" id="tag-name" placeholder="name">
+                        <input class="form-part" id="tag-name" type="text" minlength="1" maxlength="10" placeholder="name" required>
                     </div>
                     <div class="form-part-wrapper">
                         <label class="form-part" for="tag-hashtag">Hashtag:</label>
-                        <input class="form-part" id="tag-hashtag" placeholder="hashtag">
+                        <input class="form-part" id="tag-hashtag" type="text" minlength="2" maxlength="11" pattern="^#[A-Za-z]{1,10}$" placeholder="hashtag">
                     </div>
                 </div>
 
@@ -69,6 +69,7 @@
                 <legend>Filter by SearchItem</legend>
 
                 <input id="discovery-search-item" placeholder="search item">
+
                 <button type="submit" name="Apply">Apply</button>
                 <button type="submit" name="Remove">Remove</button>
 
