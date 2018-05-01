@@ -1,61 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>GeoTagApp</title>
-		<link rel='stylesheet' href='./stylesheets/style.css'/>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>GeoTagApp</title>
+    <link rel='stylesheet' href='./stylesheets/style.css'/>
+</head>
 
-	<body>
 
-		<header>
-			<img src="./images/location.png" width="100"
-					alt="an image of a map and location">
-			<h1>GeoTagApp</h1>
-			<nav>
-				<a href="#">About</a> | <a href="#">Help</a> | <a
-					href="/">Home</a>
-			</nav>
-		</header>
+<body>
 
-		<main>
+<header>
+    <a id="logo" href="index.html">
+        <img src="./images/location.png" width="100"
+             alt="an image of a map and location">
+    </a>
+    <h1 id="app-title">GeoTagApp</h1>
+    <nav id="navigation">
+        <a href="#">About</a> | <a href="#">Help</a> | <a
+            href="index.html">Home</a>
+    </nav>
+</header>
 
-			<section class="tagging">
-				<h2>Tagging</h2>
 
-				<!-- ############### Aufgabe1a Form1 Start -->
-				<form id="tag-form" action="/tagging" method="post"></form>
-				<!-- ############### Aufgabe1a Form1 Ende -->
+<main>
 
-			</section>
+    <section class="tagging">
+        <h2>Tagging</h2>
 
-			<section class="discovery">
-				<h2>Discovery</h2>
+        <!-- ############### Aufgabe1a Form1 Start -->
+        <form action="/tagging" method="post">
 
-				<!-- ############### Aufgabe1a Form2 Start -->
-				<form id="filter-form" action="/discovery" method="post"></form>
-				<!-- ############### Aufgabe1a Form2 Ende -->
+            <fieldset id="tag-spec">
+                <legend>Enter new GeoTag</legend>
 
-				<div class="taglist">
-					<ul id="results">
-						<li>Castle (49.01379, 8.404435) #sight</li>
-						<li>IWI (49.01379, 8.390071) #edu</li>
-					</ul>
-				</div>
+                <div id="tag-form">
+                    <div class="form-part-wrapper">
+                        <label class="form-part" for="tag-latitude">Latitude:</label>
+                        <input class="form-part" id="tag-latitude" placeholder="latitude">
+                    </div>
+                    <div class="form-part-wrapper">
+                        <label class="form-part" for="tag-longitude">Longitude:</label>
+                        <input class="form-part" id="tag-longitude" placeholder="longitude">
+                    </div>
+                    <div class="form-part-wrapper">
+                        <label class="form-part" for="tag-name">Name:</label>
+                        <input class="form-part" id="tag-name" placeholder="name">
+                    </div>
+                    <div class="form-part-wrapper">
+                        <label class="form-part" for="tag-hashtag">Hashtag:</label>
+                        <input class="form-part" id="tag-hashtag" placeholder="hashtag">
+                    </div>
+                </div>
 
-				<div class="tagmap">
-					<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-					<div class="caption">Result map</div>
-				</div>
+                <button type="submit" name="Submit">Submit</button>
 
-			</section>
+            </fieldset>
+        </form>
+        <!-- ############### Aufgabe1a Form1 Ende -->
+    </section>
 
-		</main>
+    <section class="discovery">
+        <h2>Discovery</h2>
 
-		<footer>
-			<span>2017 by LKIT</span>
-		</footer>
+        <!-- ############### Aufgabe1a Form2 Start -->
+        <form class="discovery1" id="filter-form" action="/discovery" method="post">
+            <fieldset id="result">
+                <legend>Filter by SearchItem</legend>
 
-	</body>
+                <input id="discovery-search-item" placeholder="search item">
+                <button type="submit" name="Apply">Apply</button>
+                <button type="submit" name="Remove">Remove</button>
+
+            </fieldset>
+        </form>
+        <!-- ############### Aufgabe1a Form2 Ende -->
+
+        <div class="discovery2">
+            <div class="taglist">
+
+                <div class="search-item">
+                    Castle (49.01379, 8.404435) #sight
+                </div>
+
+                <div class="search-item">
+                    IWI (49.01379, 8.390071) #edu
+                </div>
+            </div>
+
+            <div class="tagmap">
+                <img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
+            </div>
+        </div>
+
+        <div class="caption">Result map</div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <span>2017 by LKIT</span>
+</footer>
+
+</body>
 </html>
