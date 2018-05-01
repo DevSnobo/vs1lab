@@ -1,34 +1,19 @@
 body {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 140px auto 50px;
+    grid-template-rows: 200px auto 50px;
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 header {
-    display: inline-grid;
-    grid-template-columns: 120px 1fr 1fr;
-    grid-template-rows: 140px;
+    height: 200px;
+    padding: 8px;
     background-color: rgba(9, 9, 9, 0.65);
 }
 
-#logo {
-    align-self: center;
-    justify-self: right;
-}
-
 #app-title {
-    align-self: center;
-    justify-self: center;
-    font-size: 300%;
     color: #ffffff;
-}
-
-#navigation {
-    align-self: center;
-    justify-self: center;
-    font-size: 200%;
 }
 
 main {
@@ -58,6 +43,7 @@ main {
     display: grid;
     grid-template-rows: 1fr 1fr;
     margin: 8px;
+
     padding-right: 48px;
 }
 
