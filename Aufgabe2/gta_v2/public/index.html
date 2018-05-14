@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="row">
+    <head>
+        <meta charset="UTF-8">
+        <title>GeoTagApp</title>
+        <link rel='stylesheet' href='./stylesheets/style.css' />
+    </head>
+    <!-- Ende Header - Anfang Body-->
+    <body>
+    <header class="row">
+        <img src="./images/location.png" width="100" alt="an image of a map and location">
+        <h1>GeoTagApp</h1>
+        <nav class="nav">
+            <a href="#">About</a> | <a href="#">Help</a> | <a href="/">Home</a>
+        </nav>
+    </header>
+    <!-- Ende Body-Header -->
+    <main class="row">
+        <section class="col-2">
+            <h2>Tagging</h2>
+            <!-- ############### Aufgabe1a Form1 Start -->
+            <form id="tag-form" action="/tagging" method="post">
+                <fieldset>
+                    <legend>Enter new Geotag</legend>
+
+                    <label for="form_latitude">latitude</label><br>
+                    <input type="text" name="latitude" id="form_latitude" placeholder="48.712312395434" required><br>
+
+                    <label for="longitude">longitude</label><br>
+                    <input type="text" name="longitude" id="form_longitude" placeholder="9.123545" required><br>
+
+                    <label for="name">name</label><br>
+                    <input type="text" name="name" id="form_name" placeholder="name" maxlength="10" required><br>
+
+                    <label for="hashtag">hashtag</label><br>
+                    <input type="text" name="hashtag" id="form_hashtag" placeholder="hashtag"pattern="[#]{1,}[A-Za-z]{0,10}"><br>
+
+                    <br>
+                    <button type="button" id="submit">Submit</button>
+                </fieldset>
+            </form>
+            <!-- ############### Aufgabe1a Form1 Ende -->
+        </section>
+        <section class="col-10">
+            <h2>Discovery</h2>
+            <!-- ############### Aufgabe1a Form2 Start -->
+            <form id="filter-form" action="/discovery" method="post">
+
+                <fieldset>
+                    <legend>Filter by searchterm</legend>
+
+                    <input type="hidden" name="longitude" id="search_longitude" required><br>
+
+                    <input type="hidden" name="latitude" id="search_latitude" required>
+
+                    <input type="search" name="searchterm" id="searchterm"
+                           placeholder="hashtag">
+                    <button type="button" id="apply">apply</button>
+                    <button type="button" id="remove">remove</button>
+                </fieldset>
+            </form>
+            <!-- ############### Aufgabe1a Form2 Ende -->
+            <div class="col-3 taglist">
+                <ul id="results">
+                    <li>Castle (49.01379, 8.404435) #sight</li>
+                    <li>IWI (49.01379, 8.390071) #edu</li>
+                </ul>
+            </div>
+
+            <div class="col-9 tagmap">
+                <img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
+                <div class="col-12 caption">Result map</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="row">
+        <span>2017 by LKIT</span>
+    </footer>
+
+    <!-- Load JavaScripts
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="./javascripts/geotagging.js"></script>
+
+
+    </body>
+</html>
